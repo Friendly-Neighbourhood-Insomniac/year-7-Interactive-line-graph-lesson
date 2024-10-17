@@ -1,0 +1,550 @@
+<html><head><base href="Year 7 Mat:Interactive Line Graph Lesson/" target="_blank"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Year 7 Mathematics: Interactive Line Gra</title>
+<style>
+    /* General Styles */
+    body {
+        font-family: 'Roboto', Arial, sans-serif;
+        width: 100%; 
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+        color: #e0e0e0;
+        background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+        min-height: 100vh;
+    }
+    h1, h2, h3 {
+        color: #7b68ee;
+    }
+    h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 0.5em;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    h2 {
+        font-size: 28px;
+        margin-top: 1.5em;
+        border-bottom: 2px solid #4a0e78;
+        padding-bottom: 0.2em;
+    }
+    h3 {
+        font-size: 24px;
+        margin-top: 1em;
+    }
+    p {
+        margin: 1em 0;
+    }
+    ul {
+        margin-left: 1.5em;
+        list-style-type: disc;
+    }
+    li {
+        margin-bottom: 0.5em;
+    }
+    .box {
+        background-color: rgba(236, 240, 241, 0.1);
+        border: 1px solid #4a0e78;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 1.5em 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .example {
+        background-color: rgba(46, 204, 113, 0.1);
+        border-left: 5px solid #2ecc71;
+        padding: 15px;
+        margin: 1em 0;
+    }
+    .important {
+        background-color: rgba(241, 196, 15, 0.1);
+        border-left: 5px solid #f1c40f;
+        padding: 15px;
+        margin: 1em 0;
+    }
+    .practice-question {
+        background-color: rgba(52, 152, 219, 0.1);
+        border: 1px solid #3498db;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 1.5em 0;
+    }
+    .reflection {
+        background-color: rgba(155, 89, 182, 0.1);
+        border: 1px solid #8e44ad;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 2em 0;
+    }
+    .note {
+        font-style: italic;
+        color: #bdc3c7;
+    }
+    a {
+        color: #3498db;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    a:hover {
+        color: #2980b9;
+    }
+    /* Custom styles for modern, high-tech look */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        margin: 20px 0;
+    }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 10px;
+    }
+    .interactive-component {
+        background-color: rgba(52, 152, 219, 0.1);
+        border: 2px solid #3498db;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+    }
+    button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #2980b9;
+    }
+    #graph-container {
+        width: 100%;
+        height: 400px;
+        margin-top: 20px;
+    }
+    #random-graph-container {
+        width: 100%;
+        height: 400px;
+        margin-top: 20px;
+    }
+</style>
+
+<!-- Include KaTeX CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
+
+<!-- Include KaTeX JS -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body);"></script>
+
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+<div class="container">
+<h1>Year 7 Mathematics: More Graphs and Tables 1</h1>
+
+<div class="box">
+    <h2>Learning Objectives</h2>
+    <ul>
+        <li>Interpret and draw line graphs.</li>
+        <li>Recognise when a graph is misleading.</li>
+    </ul>
+</div>
+
+<h2>1. Introduction to Line Graphs</h2>
+
+<p>
+    Line graphs are powerful tools used to display data that changes over time. They help us see trends, patterns, and make predictions about future outcomes. In this lesson, we'll learn how to interpret and draw line graphs accurately, and how to identify misleading graphs.
+</p>
+
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/n2YkbdNORp8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h2>2. Key Terms Defined</h2>
+
+<ul>
+    <li><strong>Line Graph:</strong> A type of chart used to show information that changes over time. It displays data points connected by straight line segments.</li>
+    <li><strong>Misleading:</strong> Providing the wrong idea or impression, often by omitting important information or manipulating visual elements.</li>
+</ul>
+
+<h2>3. Common Errors and Misconceptions</h2>
+
+<h3>3.1 Starting Axis at Zero Instead of Breaking It</h3>
+
+<p>
+    Students might start the vertical axis at zero even when data values are far from zero. This can compress the graph and make significant changes appear minor.
+</p>
+
+<div class="important">
+    <p>
+        <strong>Tip:</strong> Use a break in the axis or adjust the starting point to focus on the relevant data range.
+    </p>
+</div>
+
+<h3>3.2 Choosing Inappropriate Scales</h3>
+
+<p>
+    Using scales with awkward intervals, like steps of 3, can make it difficult to read values accurately.
+</p>
+
+<div class="important">
+    <p>
+        <strong>Tip:</strong> Choose scales that make it easy to plot points and read values, such as increments of 1, 2, 5, or 10.
+    </p>
+</div>
+
+<h2>4. Main Teaching Concepts</h2>
+
+<h3>4.1 Plotting Two Graphs with Different Vertical Axes</h3>
+
+<p>
+    Let's consider a battery's voltage over time. We'll plot two graphs showing the voltage drop of a battery over 8 hours.
+</p>
+
+<div class="example">
+    <h3>Example 1: Battery Voltage Graphs</h3>
+    <p>
+        <strong>Graph A:</strong> Vertical axis starts at 0V.
+    </p>
+    <p>
+        <strong>Graph B:</strong> Vertical axis starts at 8V.
+    </p>
+    <p>
+        Both graphs plot the same data, but Graph B appears to show a more dramatic drop in voltage because of the compressed vertical scale.
+    </p>
+    <p>
+        <strong>Question:</strong> Which graph exaggerates the drop in voltage?
+    </p>
+    <p>
+        <strong>Answer:</strong> Graph B exaggerates the drop because it starts at 8V, making the decline appear steeper.
+    </p>
+</div>
+
+<h3>4.2 Comparing Two Batteries</h3>
+
+<p>
+    Now, let's compare two different batteries: the "PowerMax" and the "Lasar" battery. We'll plot both on the same graph using different colors or line styles and include a key.
+</p>
+
+<div class="example">
+    <h3>Example 2: Battery Comparison</h3>
+    <p>
+        <strong>Data:</strong>
+    </p>
+    <ul>
+        <li><strong>PowerMax Battery:</strong> Voltage drops from 9V to 6V over 8 hours.</li>
+        <li><strong>Lasar Battery:</strong> Voltage drops from 9V to 5V over 8 hours.</li>
+    </ul>
+    <p>
+        <strong>Questions:</strong>
+    </p>
+    <ol>
+        <li>Which battery lost its charge fastest in the first two hours?</li>
+        <li>Which battery lost its charge fastest in the last two hours?</li>
+        <li>How could you draw the graph for the Lasar battery so that its voltage drop appears faster?</li>
+    </ol>
+    <p>
+        <strong>Answers:</strong>
+    </p>
+    <ol>
+        <li>The Lasar battery lost its charge fastest in the first two hours.</li>
+        <li>In the last two hours, both batteries lost charge at the same rate.</li>
+        <li>By numbering the vertical axis from 7V instead of 0V, making the drop appear steeper.</li>
+    </ol>
+</div>
+
+<div class="interactive-component">
+    <h3>Interactive Battery Comparison Graph</h3>
+    <p>Use the buttons below to toggle between different vertical axis scales and see how it affects the perception of voltage drop.</p>
+    <button onclick="updateGraph('full')">Full Scale (0-10V)</button>
+    <button onclick="updateGraph('zoomed')">Zoomed Scale (5-10V)</button>
+    <div id="graph-container">
+        <canvas id="batteryGraph"></canvas>
+    </div>
+</div>
+
+<script>
+let batteryChart;
+
+function createGraph(scale) {
+    const ctx = document.getElementById('batteryGraph').getContext('2d');
+    const data = {
+        labels: ['0h', '2h', '4h', '6h', '8h'],
+        datasets: [{
+            label: 'PowerMax Battery',
+            data: [9, 8, 7, 6.5, 6],
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }, {
+            label: 'Lasar Battery',
+            data: [9, 7.5, 6.5, 5.5, 5],
+            borderColor: 'rgb(255, 99, 132)',
+            tension: 0.1
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: scale === 'full',
+                    min: scale === 'full' ? 0 : 5,
+                    max: 10,
+                    title: {
+                        display: true,
+                        text: 'Voltage (V)'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Time (hours)'
+                    }
+                }
+            }
+        }
+    };
+
+    if (batteryChart) {
+        batteryChart.destroy();
+    }
+    batteryChart = new Chart(ctx, config);
+}
+
+function updateGraph(scale) {
+    createGraph(scale);
+}
+
+// Initialize the graph with full scale
+createGraph('full');
+</script>
+
+<h3>4.3 Identifying Misleading Graphs</h3>
+
+<p>
+    A biology student recorded the number of bacteria in a Petri dish every hour and drew a line graph. However, his graph was misleading because the vertical scale did not increase in equal steps.
+</p>
+
+<div class="example">
+    <h3>Example 3: Misleading Bacteria Growth Graph</h3>
+    <p>
+        <strong>Issue:</strong> The vertical axis increments were inconsistent, distorting the representation of bacterial growth.
+    </p>
+    <p>
+        <strong>Corrected Graph:</strong> When plotted with equal increments, the graph accurately shows the growth pattern.
+    </p>
+    <p>
+        <strong>Question:</strong> Do you think the corrected graph is a good model for the next few weeks?</p>
+    <p>
+        <strong>Answer:</strong> No, because physical limitations like food source and space in the Petri dish will affect growth.
+    </p>
+</div>
+
+<h3>4.4 Discussing Best and Worst Scenarios</h3>
+
+<p>
+    Line graphs can be manipulated to show best or worst-case scenarios by adjusting scales and starting points.
+</p>
+
+<div class="example">
+    <h3>Discussion:</h3>
+    <p>
+        <strong>Question:</strong> How can line graphs show the worst and best scenarios?
+    </p>
+    <p>
+        <strong>Answer:</strong> By changing the scale or starting point of the axes, or by omitting data points, graphs can exaggerate or minimize trends to present data more positively or negatively.
+    </p>
+</div>
+
+<h2>5. Why Learn This?</h2>
+
+<p>
+    Line graphs are essential tools for predicting future outcomes based on current data trends. For example, they can illustrate how recycling efforts reduce landfill waste over time, helping policymakers make informed decisions.
+</p>
+
+<div class="example">
+    <h3>Real-Life Application: Landfill Reduction</h3>
+    <p>
+        By plotting the amount of waste sent to landfills over several years, a line graph can show the effectiveness of recycling programs. This visual representation helps communities understand the impact of their actions and encourages continued efforts.
+    </p>
+</div>
+
+<h2>6. Practice Questions</h2>
+
+<div class="practice-question">
+    <h3>Question 1</h3>
+    <p>
+        A student recorded the temperature at noon each day for a week: 20°C, 22°C, 21°C, 19°C, 23°C, 25°C, and 24°C. Draw a line graph to represent this data.
+    </p>
+</div>
+
+<div class="practice-question">
+    <h3>Question 2</h3>
+    <p>
+        Explain why starting the vertical axis at 15°C instead of 0°C might be misleading in representing the temperature data from Question 1.
+    </p>
+</div>
+
+<div class="practice-question">
+    <h3>Question 3</h3>
+    <p>
+        A company shows a line graph of their profits over five years but uses unequal intervals on the horizontal axis. How could this be misleading?
+    </p>
+</div>
+
+<div class="practice-question">
+    <h3>Question 4</h3>
+    <p>
+        Create a line graph using the following data on recycling rates (in tons) over four years: Year 1 - 500, Year 2 - 750, Year 3 - 1000, Year 4 - 1250. Choose an appropriate scale.
+    </p>
+</div>
+
+<div class="practice-question">
+    <h3>Question 5</h3>
+    <p>
+        Discuss how adjusting the scale on a graph can change the viewer's perception of the data trends.
+    </p>
+</div>
+
+<h2>7. Answers to Practice Questions</h2>
+
+<div class="box">
+    <h3>Question 1 Answer</h3>
+    <p>
+        Draw a line graph with the horizontal axis representing days of the week and the vertical axis representing temperature in °C. Plot the points and connect them with straight lines.
+    </p>
+</div>
+
+<div class="box">
+    <h3>Question 2 Answer</h3>
+    <p>
+        Starting the vertical axis at 15°C exaggerates the fluctuations in temperature, making small changes appear more significant than they are.
+    </p>
+</div>
+
+<div class="box">
+    <h3>Question 3 Answer</h3>
+    <p>
+        Unequal intervals on the horizontal axis can distort the perception of time between data points, misleading viewers about the rate of profit increase or decrease.
+    </p>
+</div>
+
+<div class="box">
+    <h3>Question 4 Answer</h3>
+    <p>
+        Choose a vertical scale that increments evenly, such as steps of 250 tons, ranging from 0 to 1300 tons. Plot the years on the horizontal axis and draw the line graph accordingly.
+    </p>
+</div>
+
+<div class="box">
+    <h3>Question 5 Answer</h3>
+    <p>
+        Adjusting the scale can either compress or stretch the graph, making trends appear less or more dramatic. This can influence how the data is interpreted, potentially leading to misconceptions.
+    </p>
+</div>
+
+<h2>8. Additional Resources</h2>
+
+<p>
+    For further practice and understanding, explore these resources:
+</p>
+
+<ul>
+    <li><a href="https://www.mathsisfun.com/data/line-graphs.html">Math is Fun: Line Graphs</a></li>
+</ul>
+
+<div class="interactive-component">
+    <h3>Random Line Graph Generator</h3>
+    <p>Click the button below to generate a new random line graph. Use this tool to practice interpreting different line graph patterns.</p>
+    <button onclick="generateRandomGraph()">Generate New Graph</button>
+    <div id="random-graph-container">
+        <canvas id="randomLineGraph"></canvas>
+    </div>
+</div>
+
+<script>
+let randomChart;
+
+function generateRandomGraph() {
+    const ctx = document.getElementById('randomLineGraph').getContext('2d');
+    const data = {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+            label: 'Random Data',
+            data: Array.from({length: 12}, () => Math.floor(Math.random() * 100)),
+            borderColor: 'rgb(75, 192, 192)',
+            tension: 0.1
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Value'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Month'
+                    }
+                }
+            }
+        }
+    };
+
+    if (randomChart) {
+        randomChart.destroy();
+    }
+    randomChart = new Chart(ctx, config);
+}
+
+// Initialize the graph
+generateRandomGraph();
+</script>
+
+<h2>9. Reflection</h2>
+
+<div class="reflection">
+    <p>
+        Consider how line graphs can be used to present data in various ways. Reflect on the importance of accuracy and honesty in data representation, especially in fields like science and business where decisions are based on data interpretations.
+    </p>
+</div>
+
+<p class="note">
+    Keep practicing interpreting and drawing line graphs. Being able to recognize misleading graphs is a valuable skill in our data-driven world!
+</p>
+
+<h2>10. Homework</h2>
+
+<div class="box">
+    <p>Complete Exercise 1.4 in your Math Progress textbooks.</p>
+</div>
+</div>
+</body></html>
